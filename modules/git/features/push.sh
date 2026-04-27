@@ -1,18 +1,18 @@
 #!/bin/bash
 
 function help_push() {
-    printf "\033[35mfast git push\033[0m -m|--message <commit_message> [-w|--whole-repo] [-f|--force]\n"
-    echo ""
-    echo "Options:"
-    echo "  -m, --message     Commit message for the changes being pushed (required)"
-    echo "  -w, --whole-repo  Push the entire repository instead of just the current directory (optional)"
-    echo "  -f, --force       Force push the changes to the remote repository (optional)"
-    echo "  -h, --help        Show this help message and exit (optional)"
-    echo ""
-    echo "Description:"
-    echo "  Pushes the specified branch to the linked remote repository."
-    echo "  If the remote branch does not exist, it will be created and the changes will be pushed there."
-    echo ""
+    printf "\033[35mfast git push\033[0m -m|--message <commit_message> [-w|--whole-repo] [-f|--force]\n" >&2
+    echo "" >&2
+    echo "Options:" >&2
+    echo "  -m, --message     Commit message for the changes being pushed (required)" >&2
+    echo "  -w, --whole-repo  Push the entire repository instead of just the current directory (optional)" >&2
+    echo "  -f, --force       Force push the changes to the remote repository (optional)" >&2
+    echo "  -h, --help        Show this help message and exit (optional)" >&2
+    echo "" >&2
+    echo "Description:" >&2
+    echo "  Pushes the specified branch to the linked remote repository." >&2
+    echo "  If the remote branch does not exist, it will be created and the changes will be pushed there." >&2
+    echo "" >&2
 }
 
 current_branch=$(git branch --show-current)

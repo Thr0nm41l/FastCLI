@@ -1,19 +1,19 @@
 #!/bin/bash
 
 function help_amend() {
-    printf "\033[35mfast git amend\033[0m [-m|--message <message>] [-w|--whole-repo] [help|-h|--help]\n"
-    echo ""
-    echo "Options:"
-    echo "  -m, --message     New commit message for the amended commit (optional)"
-    echo "  -w, --whole-repo  Amend the entire repository instead of just the current directory (optional)"
-    echo "  -h, --help        Show this help message and exit (optional)"
-    echo ""
-    echo "Description:"
-    echo "  Amends the last commit with the changes in the current directory or the whole repository. "
-    echo "  If a new commit message is provided, it will replace the existing one; otherwise, the existing commit message will be retained."
-    echo "  The amended commit will be pushed to the remote repository if the current branch has a corresponding remote branch"
-    echo "  If no remote branch is found, a new remote branch will be created and the amended commit will be pushed there."
-    echo ""
+    printf "\033[35mfast git amend\033[0m [-m|--message <message>] [-w|--whole-repo] [help|-h|--help]\n" >&2
+    echo "" >&2
+    echo "Options:" >&2
+    echo "  -m, --message     New commit message for the amended commit (optional)" >&2
+    echo "  -w, --whole-repo  Amend the entire repository instead of just the current directory (optional)" >&2
+    echo "  -h, --help        Show this help message and exit (optional)" >&2
+    echo "" >&2
+    echo "Description:" >&2
+    echo "  Amends the last commit with the changes in the current directory or the whole repository. " >&2
+    echo "  If a new commit message is provided, it will replace the existing one; otherwise, the existing commit message will be retained." >&2
+    echo "  The amended commit will be pushed to the remote repository if the current branch has a corresponding remote branch" >&2
+    echo "  If no remote branch is found, a new remote branch will be created and the amended commit will be pushed there." >&2
+    echo "" >&2
 }
 
 current_branch=$(git branch --show-current)
