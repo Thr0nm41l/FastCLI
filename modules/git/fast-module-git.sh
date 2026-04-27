@@ -30,8 +30,6 @@ function full_help() {
     done
 }
 
-
-
 if [ "$subcommand" != "" ]; then
     shift
     echo "Executing subcommand: $subcommand with arguments: $@"
