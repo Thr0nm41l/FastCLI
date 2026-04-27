@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function help_amend() {
     printf "\033[35mfast git amend\033[0m [-m|--message <message>] [-w|--whole-repo] [help|-h|--help]\n"
     echo ""
@@ -20,21 +22,23 @@ message=""
 amend_message=0
 whole_repo=0
 
-case "$1" in
-    help|-h|--help)
-        help_amend
-        exit 0
-        ;;
-    -w|--whole-repo)
-        whole_repo=1
-        shift
-        ;;
-    -m|--message)
-        amend_message=1
-        message="$2"
-        shift 2
-        ;;
-esac
+while [ "$#" -gt 0 ]; do
+    case "$1" in
+        help|-h|--help)
+            help_amend
+            exit 0
+            ;;
+        -w|--whole-repo)
+            whole_repo=1
+            shift
+            ;;
+        -m|--message)
+            amend_message=1
+            message="$2"
+            shift 2
+            ;;
+    esac
+done
 
 if [ -z "$current_branch" ]; then
     exit 1

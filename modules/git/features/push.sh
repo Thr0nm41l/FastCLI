@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function help_push() {
     printf "\033[35mfast git push\033[0m -m|--message <commit_message> [-w|--whole-repo] [-f|--force]\n"
     echo ""
@@ -19,24 +21,26 @@ message=""
 whole_repo=0
 force_push=0
 
-case "$1" in
-    help|-h|--help)
-        help_push
-        exit 0
-        ;;
-    -w|--whole-repo)
-        whole_repo=1
-        shift
-        ;;
-    -m|--message)
-        message="$2"
-        shift 2
-        ;;
-    -f|--force)
-        force_push=1
-        shift
-        ;;
-esac
+while [ "$#" -gt 0 ]; do
+    case "$1" in
+        help|-h|--help)
+            help_push
+            exit 0
+            ;;
+        -w|--whole-repo)
+            whole_repo=1
+            shift
+            ;;
+        -m|--message)
+            message="$2"
+            shift 2
+            ;;
+        -f|--force)
+            force_push=1
+            shift
+            ;;
+    esac
+done
 
 if [ -z "$current_branch" ]; then
     exit 1
