@@ -37,6 +37,11 @@ while [ "$#" -gt 0 ]; do
             message="$2"
             shift 2
             ;;
+        *)
+            echo "Unknown option: '$1'. Use 'git amend --help' for more information." >&2
+            help_amend
+            exit 127
+            ;;
     esac
 done
 

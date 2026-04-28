@@ -39,10 +39,16 @@ while [ "$#" -gt 0 ]; do
             force_push=1
             shift
             ;;
+        *)
+            echo "Unknown option: '$1'. Use 'git push --help' for more information." >&2
+            help_push
+            exit 127
+            ;;
     esac
 done
 
 if [ -z "$current_branch" ]; then
+    echo "No current branch found. Please make sure you are on a valid branch before trying to push." >&2
     exit 1
 fi
 
