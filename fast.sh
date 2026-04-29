@@ -69,6 +69,7 @@ function fast() {
         cat "$__DIR_NAME/banner.txt"
         printf "\n\n" >&2
         echo "FastCLI version: $__VERSION" >&2
+        echo "" >&2
         echo " Loaded modules:" >&2
 
         for module in "${module_list[@]}"; do
