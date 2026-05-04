@@ -1,7 +1,7 @@
 #!/bin/bash
 
-function help_rebase_branch() {
-    printf "\033[35mfast git rebase-branch\033[0m [-m|--master-branch <master_branch>] [-r|--resolve-strategy <ours|theirs|none>] [-p|--push] [help|-h|--help]\n" >&2
+function help_rebase() {
+    printf "\033[35mfast git rebase\033[0m [-m|--master-branch <master_branch>] [-r|--resolve-strategy <ours|theirs|none>] [-p|--push] [help|-h|--help]\n" >&2
     echo "" >&2
     echo "Options:" >&2
     echo "  -m, --master-branch       Specify the master branch to rebase onto (optional, defaults to the main branch of the remote repository)" >&2
@@ -25,7 +25,7 @@ push=0
 while [ "$#" -gt 0 ]; do
     case "$1" in
         help|-h|--help)
-            help_rebase_branch
+            help_rebase
             exit 0
             ;;
         -m|--master-branch)
@@ -42,7 +42,7 @@ while [ "$#" -gt 0 ]; do
             ;;
         *)
             echo "Unknown option: '$1'. Use 'git rebase-branch --help' for more information." >&2
-            help_rebase_branch
+            help_rebase
             exit 127
             ;;
     esac

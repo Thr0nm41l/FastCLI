@@ -1,7 +1,7 @@
 #!/bin/bash
 
 __MODULE_NAME="Git"
-__VERSION="1.1.0"
+__VERSION="1.2.0"
 __DIR_NAME=$(dirname "$(readlink -f "${BASH_SOURCE[0]:-$0}")")
 __SCRIPT_PATH="$__DIR_NAME/features"
 
